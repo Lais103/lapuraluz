@@ -34,6 +34,7 @@ document.querySelectorAll('.btn-pedir').forEach(btn => {
   btn.addEventListener('click', () => {
     const produto = btn.dataset.produto;
     const select = document.getElementById('produto');
+
     if (select) {
       [...select.options].forEach(option => {
         if (option.value === produto) {
@@ -41,6 +42,7 @@ document.querySelectorAll('.btn-pedir').forEach(btn => {
         }
       });
     }
+
     document.getElementById('pedido')?.scrollIntoView({ behavior: 'smooth' });
   });
 });
