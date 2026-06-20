@@ -1,336 +1,366 @@
-/* =========================================================
-   Estilo base inspirado no layout do IPESP
-   Cada site sobrescreve as variáveis --primary e --accent
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Pura Luz Acessórios - Semijoias à Prova D'água</title>
+  <meta name="description" content="Acessórios em aço inoxidável e folheados. Peças à prova d'água, hipoalergênicas e duráveis.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-:root {
-  --primary: #1c1c1c;
-  --primary-dark: #000000;
-  --accent: #c9a96e;
-  --bg-light: #f8f6f1;
-  --text: #2b2b2b;
-  --text-soft: #555;
-  --white: #ffffff;
-  --shadow: 0 4px 18px rgba(0,0,0,.08);
-  --radius: 10px;
-}
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">L</span>
+      La Pura Luz
+    </a>
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#catalogo">Coleção</a></li>
+        <li><a href="#pedido">Pedido</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="#catalogo" class="btn btn-outline">Ver Coleção</a>
+      <a href="https://wa.me/5511963180253" target="_blank" class="btn btn-whats">📱 WhatsApp</a>
+    </div>
+  </div>
+</header>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <div class="hero-left">
+      <a href="#catalogo" class="side-btn">💍 Ver Coleção</a>
+      <a href="#pedido" class="side-btn">🛒 Fazer Pedido</a>
+      <a href="#sobre" class="side-btn">✨ Nossa História</a>
+      <a href="#blog" class="side-btn">📰 Blog</a>
+    </div>
 
-html { scroll-behavior: smooth; }
+    <div class="hero-center">
+      <h1>La Pura Luz</h1>
+      <div class="hero-divider"></div>
+      <p class="tagline">Acessórios que brilham com você todos os dias.</p>
+    </div>
 
-body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  color: var(--text);
-  line-height: 1.6;
-  background: var(--white);
-}
+    <div class="hero-right">
+      <div class="menu-card">
+        <h3>NOSSAS CATEGORIAS</h3>
+        <ul>
+          <li>Colares</li>
+          <li>Brincos</li>
+          <li>Pulseiras</li>
+          <li>Anéis</li>
+          <li>Relógios</li>
+          <li>Conjuntos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-img { max-width: 100%; display: block; }
+<!-- QUEM SOMOS -->
+<section id="sobre">
+  <div class="container">
+    <h2 class="section-title">Quem Somos</h2>
+    <div class="section-divider"></div>
 
-a { color: inherit; text-decoration: none; }
+    <div class="about-grid">
+      <div class="about-text">
+        <p>A <strong>La Pura Luz Acessórios</strong> nasceu da paixão por peças que unem <em>beleza, durabilidade e conforto</em>. Trabalhamos com semijoias em <strong>aço inoxidável</strong> e <strong>peças folheadas</strong>, criadas pra acompanhar você em todos os momentos.</p>
+        <p>Nossos acessórios são <strong>à prova d'água</strong> e <strong>hipoalergênicos</strong> — você pode tomar banho, ir à praia, malhar e não tira nada. Sem oxidar, sem manchar a pele, sem perder o brilho.</p>
+        <p>Cada peça é selecionada com carinho pra elevar seu look com muito estilo, do clássico ao moderno.</p>
+        <p style="margin-top:18px;">
+          <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" class="btn btn-primary">📷 Siga no Instagram</a>
+        </p>
+      </div>
 
-.container {
-  width: 92%;
-  max-width: 1180px;
-  margin: 0 auto;
-}
+      <div class="cards-col">
+        <div class="info-card">
+          <h4>Nossa Promessa</h4>
+          <p>Peças que duram. À prova d'água, sem oxidação, sem alergia. Bonitas no primeiro dia e no centésimo também.</p>
+        </div>
+        <div class="info-card">
+          <h4>Por que escolher La Pura Luz?</h4>
+          <div class="values-grid">
+            <div class="value-pill">À prova d'água</div>
+            <div class="value-pill">Hipoalergênico</div>
+            <div class="value-pill">Aço inox premium</div>
+            <div class="value-pill">Acabamento fino</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ===== HEADER ===== */
-.site-header {
-  background: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,.06);
-  position: sticky; top: 0; z-index: 100;
-}
-.header-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 0;
-}
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 700; font-size: 1.25rem; color: var(--primary);
-}
-.logo-mark {
-  width: 42px; height: 42px; border-radius: 8px;
-  background: var(--primary); color: var(--white);
-  display: grid; place-items: center; font-weight: 800;
-}
+<!-- CATÁLOGO -->
+<section id="catalogo" class="section-alt">
+  <div class="container">
+    <h2 class="section-title">Nossa Coleção</h2>
+    <div class="section-divider"></div>
 
-nav ul { list-style: none; display: flex; gap: 26px; }
-nav a {
-  font-weight: 500; color: var(--text);
-  transition: color .2s;
-}
-nav a:hover { color: var(--primary); }
+    <div class="catalog-grid">
+      <div class="product-card">
+        <div class="product-img">💍</div>
+        <div class="product-info">
+          <h3>Conjunto Clássico</h3>
+          <p>Colar + brincos + pulseira em aço inoxidável dourado. Combina com tudo.</p>
+          <div class="product-price">R$ 149,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Conjunto Clássico">Quero Este</button>
+        </div>
+      </div>
 
-.header-cta {
-  display: flex; gap: 10px;
-}
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 18px;
-  border-radius: 6px; font-weight: 600; font-size: .92rem;
-  border: none; cursor: pointer; transition: transform .15s, box-shadow .15s, background .2s;
-}
-.btn-primary { background: var(--primary); color: var(--white); }
-.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-.btn-accent  { background: var(--accent);  color: var(--white); }
-.btn-accent:hover  { filter: brightness(.95); transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-.btn-outline:hover { background: var(--primary); color: var(--white); }
-.btn-whats { background: #25d366; color: white; }
-.btn-whats:hover { background: #1ebe5b; }
+      <div class="product-card">
+        <div class="product-img">📿</div>
+        <div class="product-info">
+          <h3>Colar Fio de Seda</h3>
+          <p>Colar delicado em fio de seda com pingente em zircônias. Para looks basiquinhos.</p>
+          <div class="product-price">R$ 79,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Colar Fio de Seda">Quero Este</button>
+        </div>
+      </div>
 
-.menu-toggle {
-  display: none; background: none; border: none; cursor: pointer;
-  font-size: 1.6rem; color: var(--primary);
-}
+      <div class="product-card">
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <h3>Relógio DIVO</h3>
+          <p>Visor oval, pulseira estilo bracelete. Elegância clássica que nunca sai de moda.</p>
+          <div class="product-price">R$ 229,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Relógio DIVO">Quero Este</button>
+        </div>
+      </div>
 
-/* ===== HERO ===== */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--white);
-  padding: 90px 0 110px;
-  overflow: hidden;
-}
-.hero::before {
-  content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><path fill='none' stroke='rgba(255,255,255,.06)' stroke-width='1' d='M0 30h60M30 0v60'/></svg>");
-  opacity: .6;
-}
-.hero-content {
-  position: relative;
-  display: grid; grid-template-columns: 1fr 2fr 1fr;
-  gap: 30px; align-items: center; min-height: 360px;
-}
-.hero-left, .hero-right { display: flex; flex-direction: column; gap: 12px; }
-.hero-center { text-align: center; }
-.hero-center h1 {
-  font-size: 2.4rem; font-weight: 700; margin-bottom: 14px;
-  text-shadow: 0 2px 8px rgba(0,0,0,.3);
-}
-.hero-center .tagline {
-  font-style: italic; font-size: 1.1rem; opacity: .95;
-}
-.hero-center .tagline::before,
-.hero-center .tagline::after { content: '"'; }
-.hero-divider {
-  width: 90px; height: 3px; background: var(--accent);
-  margin: 18px auto;
-}
+      <div class="product-card">
+        <div class="product-img">✨</div>
+        <div class="product-info">
+          <h3>Brincos Argola Premium</h3>
+          <p>Argola média em aço inoxidável banhado a ouro. À prova d'água.</p>
+          <div class="product-price">R$ 59,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Brincos Argola Premium">Quero Este</button>
+        </div>
+      </div>
 
-.side-btn {
-  display: flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.25);
-  color: var(--white); padding: 12px 16px;
-  border-radius: 6px; font-weight: 500;
-  transition: background .2s, transform .15s;
-  font-size: .92rem;
-}
-.side-btn:hover { background: rgba(255,255,255,.22); transform: translateX(4px); }
+      <div class="product-card">
+        <div class="product-img">💎</div>
+        <div class="product-info">
+          <h3>Pulseira Riviera</h3>
+          <p>Pulseira cravejada com zircônias. Brilho fino e elegante pra produções marcantes.</p>
+          <div class="product-price">R$ 119,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Pulseira Riviera">Quero Este</button>
+        </div>
+      </div>
 
-.menu-card {
-  background: rgba(255,255,255,.08);
-  border-radius: 8px; padding: 18px;
-  border: 1px solid rgba(255,255,255,.15);
-}
-.menu-card h3 {
-  color: var(--accent); text-align: right;
-  font-size: 1rem; margin-bottom: 12px; letter-spacing: 1px;
-}
-.menu-card ul { list-style: none; }
-.menu-card li {
-  padding: 8px 0; text-align: right;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  font-size: .93rem; cursor: pointer; transition: color .2s;
-}
-.menu-card li:hover { color: var(--accent); }
-.menu-card li::after { content: " ›"; color: var(--accent); }
+      <div class="product-card">
+        <div class="product-img">💛</div>
+        <div class="product-info">
+          <h3>Anel Solitário</h3>
+          <p>Anel ajustável em aço inox folheado, com pedra central. Discreto e sofisticado.</p>
+          <div class="product-price">R$ 49,90</div>
+          <button class="btn btn-accent btn-pedir" data-produto="Anel Solitário">Quero Este</button>
+        </div>
+      </div>
+    </div>
 
-/* ===== SECTIONS ===== */
-section { padding: 70px 0; }
-.section-alt { background: var(--bg-light); }
-.section-title {
-  text-align: center; font-size: 1.9rem; color: var(--primary);
-  margin-bottom: 12px; font-weight: 700;
-}
-.section-divider {
-  width: 70px; height: 3px; background: var(--accent);
-  margin: 0 auto 40px;
-}
+    <p style="text-align:center; margin-top:30px; color: var(--text-soft);">
+      ✨ <em>Coleção completa atualizada todo mês no nosso Instagram. </em>
+      <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" style="color: var(--primary); font-weight:600;">@lapuraluz.acessorios</a>
+    </p>
+  </div>
+</section>
 
-/* Quem Somos */
-.about-grid {
-  display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px;
-}
-.about-text p { margin-bottom: 14px; color: var(--text-soft); }
-.cards-col { display: flex; flex-direction: column; gap: 18px; }
-.info-card {
-  background: var(--white); padding: 22px;
-  border-radius: var(--radius); box-shadow: var(--shadow);
-}
-.info-card h4 {
-  color: var(--primary); margin-bottom: 8px;
-  display: flex; align-items: center; gap: 8px;
-}
-.info-card h4::before {
-  content: "●"; color: var(--accent); font-size: 1.2rem;
-}
-.values-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;
-}
-.value-pill {
-  background: var(--bg-light); padding: 10px 12px;
-  border-radius: 6px; font-size: .9rem; text-align: center;
-}
+<!-- PEDIDO -->
+<section id="pedido">
+  <div class="container">
+    <h2 class="section-title">Faça Seu Pedido</h2>
+    <div class="section-divider"></div>
 
-/* Catálogo */
-.catalog-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
-.product-card {
-  background: var(--white); border-radius: var(--radius);
-  box-shadow: var(--shadow); overflow: hidden;
-  transition: transform .2s, box-shadow .2s;
-  display: flex; flex-direction: column;
-}
-.product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 22px rgba(0,0,0,.12); }
-.product-img {
-  height: 200px; background: linear-gradient(135deg, var(--primary), var(--accent));
-  display: grid; place-items: center; color: var(--white);
-  font-size: 3rem;
-}
-.product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
-.product-info h3 { color: var(--primary); margin-bottom: 6px; font-size: 1.1rem; }
-.product-info p { color: var(--text-soft); font-size: .9rem; margin-bottom: 12px; flex: 1; }
-.product-price {
-  color: var(--accent); font-weight: 700; font-size: 1.2rem; margin-bottom: 12px;
-}
-.product-card .btn { width: 100%; justify-content: center; }
+    <div class="order-grid">
+      <div class="order-info">
+        <h3>Como comprar</h3>
+        <ul>
+          <li>Escolha a peça no nosso catálogo</li>
+          <li>Preencha o formulário ao lado</li>
+          <li>Seu pedido vai direto pro nosso WhatsApp</li>
+          <li>Confirmamos disponibilidade e formas de pagamento</li>
+          <li>Enviamos pro Brasil todo</li>
+        </ul>
+        <p style="margin-top:22px;">
+          <strong>Quer atendimento direto?</strong><br>
+          <a href="https://wa.me/5511963180253" target="_blank" class="btn btn-whats" style="margin-top:10px;">
+            💬 96318-0253
+          </a>
+        </p>
+      </div>
 
-/* Form de pedido */
-.order-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
-  align-items: start;
-}
-.order-info { background: var(--primary); color: var(--white); padding: 30px; border-radius: var(--radius); }
-.order-info h3 { color: var(--accent); margin-bottom: 16px; }
-.order-info ul { list-style: none; }
-.order-info li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
-.order-info li::before { content: "✓ "; color: var(--accent); font-weight: bold; }
+      <form class="order-form" id="order-form" data-whats="5511963180253">
+        <div class="form-group">
+          <label for="nome">Seu nome *</label>
+          <input type="text" id="nome" name="nome" required placeholder="Nome completo">
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone *</label>
+          <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="produto">Peça *</label>
+            <select id="produto" name="produto" required>
+              <option value="">Escolha...</option>
+              <option>Conjunto Clássico</option>
+              <option>Colar Fio de Seda</option>
+              <option>Relógio DIVO</option>
+              <option>Brincos Argola Premium</option>
+              <option>Pulseira Riviera</option>
+              <option>Anel Solitário</option>
+              <option>Outra peça (especificar nas observações)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" value="1">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="obs">Observações (opcional)</label>
+          <textarea id="obs" name="obs" placeholder="Ex: tamanho, cor, forma de pagamento, dúvidas..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          📲 Enviar Pedido pelo WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 
-.order-form {
-  background: var(--white); padding: 30px; border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.form-group { margin-bottom: 16px; }
-.form-group label {
-  display: block; margin-bottom: 6px; font-weight: 500; color: var(--text);
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%; padding: 11px 14px;
-  border: 1px solid #d0d4dc; border-radius: 6px;
-  font-family: inherit; font-size: .95rem;
-  transition: border .2s, box-shadow .2s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none; border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(26,58,138,.12);
-}
-.form-group textarea { resize: vertical; min-height: 90px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+<!-- BLOG -->
+<section id="blog" class="section-alt">
+  <div class="container">
+    <h2 class="section-title">Blog & Novidades</h2>
+    <div class="section-divider"></div>
 
-/* Localização */
-.map-wrap {
-  background: var(--bg-light);
-  border-radius: var(--radius); overflow: hidden;
-  border: 1px solid #e3e5ea; min-height: 320px;
-  display: grid; place-items: center; text-align: center;
-  padding: 30px;
-}
-.map-wrap iframe { width: 100%; min-height: 320px; border: 0; }
-.map-placeholder { color: var(--text-soft); }
-.map-placeholder i { font-size: 3rem; color: var(--accent); display: block; margin-bottom: 10px; }
+    <div class="catalog-grid">
+      <div class="product-card">
+        <div class="product-img">🌟</div>
+        <div class="product-info">
+          <h3>Como cuidar das suas semijoias</h3>
+          <p>Dicas pra suas peças durarem ainda mais bonitas, mesmo sendo à prova d'água.</p>
+          <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" class="btn btn-accent">Ler no Instagram</a>
+        </div>
+      </div>
 
-/* Contato */
-.contact-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
-.contact-card {
-  background: var(--white); padding: 24px; text-align: center;
-  border-radius: var(--radius); box-shadow: var(--shadow);
-  transition: transform .2s;
-}
-.contact-card:hover { transform: translateY(-4px); }
-.contact-icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--primary); color: var(--white);
-  display: grid; place-items: center; margin: 0 auto 14px;
-  font-size: 1.4rem;
-}
-.contact-card h4 { color: var(--primary); margin-bottom: 6px; }
-.contact-card p { color: var(--text-soft); font-size: .94rem; }
-.contact-card a { color: var(--primary); font-weight: 600; }
+      <div class="product-card">
+        <div class="product-img">👗</div>
+        <div class="product-info">
+          <h3>Acessórios pra cada ocasião</h3>
+          <p>Dia, noite, trabalho ou balada — descubra a peça certa pra cada momento.</p>
+          <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" class="btn btn-accent">Ler no Instagram</a>
+        </div>
+      </div>
 
-/* Floating WhatsApp */
-.float-whats {
-  position: fixed; right: 22px; bottom: 22px; z-index: 99;
-  width: 58px; height: 58px; border-radius: 50%;
-  background: #25d366; color: white;
-  display: grid; place-items: center;
-  font-size: 1.7rem; box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  animation: pulse 2s infinite;
-}
-.float-whats:hover { background: #1ebe5b; }
-@keyframes pulse {
-  0%,100% { box-shadow: 0 6px 18px rgba(37,211,102,.5); }
-  50%     { box-shadow: 0 6px 24px rgba(37,211,102,.9); }
-}
+      <div class="product-card">
+        <div class="product-img">💝</div>
+        <div class="product-info">
+          <h3>Promoções da semana</h3>
+          <p>Até 50% OFF em peças selecionadas. Confira no Instagram!</p>
+          <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" class="btn btn-accent">Ver Promos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* Footer */
-.site-footer {
-  background: #1a1a1a; color: #cfcfcf; padding: 40px 0 20px;
-  text-align: center; font-size: .92rem;
-}
-.site-footer h5 { color: var(--white); margin-bottom: 10px; }
-.footer-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px; text-align: left; margin-bottom: 28px;
-}
-.footer-bottom { border-top: 1px solid #333; padding-top: 18px; color: #888; }
-.social-links { display: flex; gap: 14px; margin-top: 8px; }
-.social-links a {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: #2a2a2a; display: grid; place-items: center;
-  transition: background .2s;
-}
-.social-links a:hover { background: var(--accent); }
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao">
+  <div class="container">
+    <h2 class="section-title">Onde Estamos</h2>
+    <div class="section-divider"></div>
+    <div class="map-wrap">
+      <div class="map-placeholder">
+        <i>📍</i>
+        <h3>Endereço será adicionado em breve</h3>
+        <p>Atendemos pelo WhatsApp e Instagram.<br>
+        Enviamos pro Brasil inteiro!</p>
+        <a href="https://wa.me/5511963180253" target="_blank" class="btn btn-whats" style="margin-top:14px;">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .hero-content { grid-template-columns: 1fr; }
-  .hero-left, .hero-right { display: none; }
-  .hero { padding: 60px 0 70px; }
-  .hero-center h1 { font-size: 1.7rem; }
-  .about-grid, .order-grid { grid-template-columns: 1fr; }
-  nav { display: none; position: absolute; top: 70px; right: 0; width: 100%;
-        background: var(--white); box-shadow: 0 4px 10px rgba(0,0,0,.1); }
-  nav.open { display: block; }
-  nav ul { flex-direction: column; padding: 14px; }
-  nav li { padding: 10px 0; border-bottom: 1px solid #eee; }
-  .menu-toggle { display: block; }
-  .header-cta .btn { padding: 8px 12px; font-size: .85rem; }
-  .form-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-  .header-cta .btn-outline { display: none; }
-  .section-title { font-size: 1.5rem; }
-}
+<!-- CONTATO -->
+<section id="contato" class="section-alt">
+  <div class="container">
+    <h2 class="section-title">Fale Conosco</h2>
+    <div class="section-divider"></div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/5511963180253" target="_blank">96318-0253</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📷</div>
+        <h4>Instagram</h4>
+        <p><a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank">@lapuraluz.acessorios</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🚚</div>
+        <h4>Envio</h4>
+        <p>Enviamos para todo Brasil<br>via correios ou transportadora</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💳</div>
+        <h4>Pagamento</h4>
+        <p>Pix, cartão de crédito<br>e parcelamento</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5>La Pura Luz</h5>
+        <p>Semijoias à prova d'água em aço inoxidável.<br>Beleza que dura.</p>
+      </div>
+      <div>
+        <h5>Links</h5>
+        <p>
+          <a href="#sobre">Quem Somos</a><br>
+          <a href="#catalogo">Coleção</a><br>
+          <a href="#pedido">Pedido</a><br>
+          <a href="#blog">Blog</a>
+        </p>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <p>📱 96318-0253<br>📷 @lapuraluz.acessorios</p>
+        <div class="social-links">
+          <a href="https://wa.me/5511963180253" target="_blank">💬</a>
+          <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 La Pura Luz Acessórios. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511963180253" target="_blank" class="float-whats" title="Fale conosco">💬</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
