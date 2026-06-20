@@ -1,22 +1,16 @@
-/* ===== CORREÇÃO FINAL HERO / REMOVER LETRAS GIGANTES ATRÁS ===== */
+/* ===== CORREÇÃO FINAL - REMOVER LETRAS GIGANTES NO FUNDO ===== */
 
 .hero {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.55), transparent 35%),
-    radial-gradient(circle at 80% 25%, rgba(255,255,255,.35), transparent 30%),
-    radial-gradient(circle at 60% 75%, rgba(255,255,255,.32), transparent 25%),
-    linear-gradient(180deg, #f8ecd7 0%, #fff8ed 52%, #f5ead4 100%) !important;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.55), transparent 35%),
-    radial-gradient(circle at 80% 25%, rgba(255,255,255,.35), transparent 30%),
-    radial-gradient(circle at 60% 75%, rgba(255,255,255,.32), transparent 25%),
-    linear-gradient(180deg, #f8ecd7 0%, #fff8ed 52%, #f5ead4 100%) !important;
+  background: linear-gradient(180deg, #f7ead4 0%, #fff8ee 52%, #f4e7d0 100%) !important;
+  background-image: none !important;
   min-height: calc(100vh - 82px) !important;
   overflow: hidden !important;
 }
 
 .hero::before,
-.hero::after {
+.hero::after,
+.hero-center::before,
+.hero-center::after {
   content: none !important;
   display: none !important;
   background: none !important;
@@ -33,27 +27,26 @@
 
 .hero-center {
   background: transparent !important;
+  background-image: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border: 0 !important;
-  padding: 0 !important;
   border-radius: 0 !important;
+  padding: 0 !important;
   max-width: 100% !important;
 }
 
-.hero-logo,
 .hero-logo-full {
   display: block !important;
-  width: min(720px, 100%) !important;
-  max-height: 64vh !important;
+  width: min(620px, 100%) !important;
+  max-height: 62vh !important;
   object-fit: contain !important;
   margin: 0 auto !important;
-  filter: none !important;
-  background: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
   border-radius: 0 !important;
+  background: transparent !important;
 }
 
 .hero-divider {
@@ -61,8 +54,8 @@
 }
 
 .hero-tagline {
-  font-size: 1.3rem !important;
   text-align: center !important;
+  font-size: 1.2rem !important;
 }
 
 @media (max-width: 980px) {
@@ -86,24 +79,12 @@
     margin: 0 auto !important;
   }
 
-  .hero-logo,
   .hero-logo-full {
     width: 100% !important;
-    max-height: 58svh !important;
+    max-height: 56svh !important;
   }
 
   .hero-tagline {
-    font-size: 1.05rem !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-logo,
-  .hero-logo-full {
-    max-height: 52svh !important;
-  }
-
-  .hero-tagline {
-    font-size: .98rem !important;
+    font-size: 1.02rem !important;
   }
 }
