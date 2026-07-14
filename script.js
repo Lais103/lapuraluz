@@ -8,25 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       const isOpen = mainNav.classList.toggle("active");
       menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      document.body.classList.toggle("menu-open", isOpen);
     });
 
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mainNav.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
       });
     });
 
     document.addEventListener("click", (event) => {
-      const clickedInsideMenu = mainNav.contains(event.target);
+      const clickedInsideNav = mainNav.contains(event.target);
       const clickedToggle = menuToggle.contains(event.target);
 
-      if (!clickedInsideMenu && !clickedToggle) {
+      if (!clickedInsideNav && !clickedToggle) {
         mainNav.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
       }
     });
   }
@@ -34,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     if (!header) return;
 
-    if (window.scrollY > 12) {
+    if (window.scrollY > 10) {
       header.style.boxShadow = "0 8px 24px rgba(61, 43, 20, 0.08)";
     } else {
       header.style.boxShadow = "none";
