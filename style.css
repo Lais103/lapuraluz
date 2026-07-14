@@ -17,7 +17,6 @@
   --transition: all 0.28s ease;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +56,6 @@ ul {
   list-style: none;
 }
 
-/* BASE */
 .container {
   width: min(92%, var(--container));
   margin: 0 auto;
@@ -103,7 +101,6 @@ ul {
   font-size: 1rem;
 }
 
-/* BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -181,7 +178,6 @@ ul {
   transform: scaleX(1);
 }
 
-/* HEADER */
 .site-header {
   position: sticky;
   top: 0;
@@ -268,7 +264,6 @@ ul {
   border-radius: 10px;
 }
 
-/* HERO */
 .hero {
   position: relative;
   overflow: hidden;
@@ -426,7 +421,6 @@ ul {
   font-weight: 800;
 }
 
-/* TRUST */
 .trust-strip {
   background: var(--white);
   border-top: 1px solid rgba(184,146,92,.08);
@@ -451,7 +445,6 @@ ul {
   box-shadow: var(--shadow-soft);
 }
 
-/* ABOUT */
 .about-section {
   padding: 88px 0;
   background: linear-gradient(180deg, #fffdf9 0%, #fff7ee 100%);
@@ -486,7 +479,6 @@ ul {
   margin-top: 22px;
 }
 
-/* COLLECTIONS */
 .collections-section {
   padding: 88px 0;
   background: var(--white);
@@ -556,7 +548,6 @@ ul {
   margin-bottom: 12px;
 }
 
-/* BENEFITS */
 .benefits-section {
   padding: 88px 0;
   background: linear-gradient(180deg, #fff8f0 0%, #fffdf9 100%);
@@ -586,7 +577,6 @@ ul {
   color: var(--text-soft);
 }
 
-/* CATALOG CTA */
 .catalog-section {
   padding: 88px 0;
   background:
@@ -614,7 +604,6 @@ ul {
   font-size: 0.95rem;
 }
 
-/* INSTAGRAM */
 .instagram-section {
   padding: 88px 0;
   background: var(--white);
@@ -650,7 +639,6 @@ ul {
   text-align: center;
 }
 
-/* BRAND MESSAGE */
 .brand-message {
   padding: 30px 0 88px;
   background: var(--white);
@@ -667,7 +655,6 @@ ul {
   box-shadow: var(--shadow-soft);
 }
 
-/* FINAL CTA */
 .final-cta {
   padding: 0 0 88px;
   background: var(--white);
@@ -692,7 +679,6 @@ ul {
   gap: 14px;
 }
 
-/* FOOTER */
 .site-footer {
   background: #2d241c;
   color: rgba(255,255,255,.88);
@@ -734,7 +720,6 @@ ul {
   color: var(--white);
 }
 
-/* FLOAT WHATSAPP */
 .float-whats {
   position: fixed;
   right: 20px;
@@ -769,7 +754,6 @@ ul {
   }
 }
 
-/* RESPONSIVO */
 @media (max-width: 1100px) {
   .hero-content {
     grid-template-columns: 180px 1fr 220px;
