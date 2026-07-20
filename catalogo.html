@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — La Pura Luz Acessórios</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.catalogo-hero{padding:3rem 0;background:linear-gradient(180deg,#f8ecdc,#fdf8f2);text-align:center}
+.catalogo-hero h1{font-family:var(--fonte-display);font-size:clamp(2rem,5vw,3.4rem);margin-bottom:.5rem}
+.filtros{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:2rem 0}
+.filtro{padding:.5rem 1.2rem;border-radius:999px;border:1px solid var(--borda);background:var(--branco);font-weight:700;font-size:.88rem;cursor:pointer;transition:var(--trans);font-family:inherit;color:var(--texto)}
+.filtro:hover,.filtro.ativo{background:var(--ouro);color:var(--branco);border-color:var(--ouro)}
+.produtos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem;padding:2rem 0 4rem}
+.produto-card{background:var(--branco);border-radius:var(--raio-lg);border:1px solid rgba(176,138,87,.12);overflow:hidden;box-shadow:var(--sombra-s);transition:var(--trans)}
+.produto-card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.produto-img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bg-soft)}
+.produto-img-placeholder{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#f8ecdf,#e7cba3);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.produto-info{padding:1rem 1.2rem 1.2rem}
+.produto-info h3{font-family:var(--fonte-display);font-size:1.2rem;margin-bottom:.3rem}
+.produto-info .preco{font-weight:800;color:var(--ouro-escuro);font-size:1.15rem;margin-bottom:.4rem}
+.produto-info .desc{font-size:.88rem;margin-bottom:.8rem}
+.produto-info .btn{width:100%;font-size:.9rem;min-height:42px}
+.sem-produtos{text-align:center;padding:3rem;color:var(--texto-suave);font-style:italic}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-wrap">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="La Pura Luz" class="brand-logo">
+      <span class="brand-name">La Pura Luz</span>
+    </a>
+    <div class="header-actions">
+      <a href="index.html" class="btn btn-outline">&#8592; Voltar ao site</a>
+    </div>
+  </div>
+</header>
+
+<section class="catalogo-hero">
+  <div class="container">
+    <span class="eyebrow">La Pura Luz</span>
+    <h1>Nosso Catálogo</h1>
+    <p>Peças em aço inox com elegância e estilo para o seu dia a dia.</p>
+    <div class="filtros" id="filtros"></div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="produtos-grid" id="produtosGrid"></div>
+</div>
+
+<script>
+const WHATS = '5511963180253';
+const CATEGORIAS = ['Colares','Brincos','Pulseiras','Anéis','Relógios','Conjuntos','Outros'];
+let filtroAtual = '';
+
+function carregarProdutos() {
+  try {
+    const d = JSON.parse(localStorage.getItem('lpl_dados') || '{}');
+    return (d.produtos || []).filter(p => p.ativo !== false);
+  } catch(e) { return []; }
+}
+
+function renderFiltros() {
+  const box = document.getElementById('filtros');
+  box.innerHTML = `<button class="filtro ativo" data-cat="">Todos</button>` +
+    CATEGORIAS.map(c => `<button class="filtro" data-cat="${c}">${c}</button>`).join('');
+  box.querySelectorAll('.filtro').forEach(b => b.addEventListener('click', () => {
+    box.querySelectorAll('.filtro').forEach(x => x.classList.remove('ativo'));
+    b.classList.add('ativo');
+    filtroAtual = b.dataset.cat;
+    renderProdutos();
+  }));
+}
+
+function renderProdutos() {
+  const grid = document.getElementById('produtosGrid');
+  let lista = carregarProdutos();
+  if (filtroAtual) lista = lista.filter(p => p.categoria === filtroAtual);
+  if (!lista.length) {
+    grid.innerHTML = '<p class="sem-produtos">Nenhum produto cadastrado ainda. Em breve novas peças! ✨</p>';
+    return;
+  }
+  grid.innerHTML = lista.map(p => {
+    const img = p.imagem
+      ? `<img src="${p.imagem}" alt="${p.nome}" class="produto-img">`
+      : `<div class="produto-img-placeholder">💎</div>`;
+    const preco = p.preco ? `R$ ${Number(p.preco).toFixed(2).replace('.', ',')}` : 'Consulte';
+    const texto = encodeURIComponent(`Olá! Quero saber sobre: ${p.nome} (${p.categoria}) — ${preco}`);
+    return `
+    <article class="produto-card" id="${(p.categoria||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}">
+      ${img}
+      <div class="produto-info">
+        <h3>${p.nome}</h3>
+        <p class="preco">${preco}</p>
+        ${p.descricao ? `<p class="desc">${p.descricao}</p>` : ''}
+        <a href="https://wa.me/${WHATS}?text=${texto}" class="btn btn-whatsapp" target="_blank" rel="noopener">Quero essa peça</a>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+renderFiltros();
+renderProdutos();
+</script>
+</body>
+</html>

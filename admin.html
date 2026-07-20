@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — La Pura Luz</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="tela-login" id="telaLogin">
+  <div class="login-card">
+    <img src="logo.png" alt="La Pura Luz" class="login-logo">
+    <h1 class="login-titulo">La Pura Luz</h1>
+    <p class="login-sub">ÁREA ADMINISTRATIVA</p>
+    <form id="formLogin" autocomplete="off">
+      <label>E-mail <input type="email" id="loginEmail" placeholder="seu@email.com" required></label>
+      <label>Senha <input type="password" id="loginSenha" placeholder="••••••" required></label>
+      <p class="login-erro" id="loginErro">E-mail ou senha incorretos.</p>
+      <button type="submit" class="btn-entrar">Entrar</button>
+    </form>
+    <a href="index.html" class="login-voltar">&#8592; Voltar ao site</a>
+  </div>
+</div>
+
+<!-- PAINEL -->
+<div class="painel" id="painel" hidden>
+  <header class="painel-topo">
+    <div class="painel-marca">
+      <img src="logo.png" alt="La Pura Luz">
+      <span>La Pura Luz <small>Painel Admin</small></span>
+    </div>
+    <div class="painel-acoes">
+      <a href="index.html" class="topo-link">Ver site</a>
+      <button class="topo-link sair" id="btnSair">Sair</button>
+    </div>
+  </header>
+
+  <nav class="abas" id="abas">
+    <button class="aba ativa" data-aba="dashboard">&#128202; Resumo</button>
+    <button class="aba" data-aba="catalogo">&#128142; Catálogo</button>
+    <button class="aba" data-aba="pedidos">&#128230; Pedidos</button>
+    <button class="aba" data-aba="entradas">&#128181; Entradas</button>
+    <button class="aba" data-aba="saidas">&#128184; Saídas</button>
+    <button class="aba" data-aba="fechamentos">&#128197; Fechamentos</button>
+    <button class="aba" data-aba="backup">&#128190; Backup</button>
+  </nav>
+
+  <main class="conteudo">
+
+    <!-- RESUMO -->
+    <section class="painel-secao ativa" id="sec-dashboard">
+      <div class="secao-cab"><h2>Resumo do mês</h2><input type="month" id="mesResumo"></div>
+      <div class="kpis">
+        <div class="kpi kpi-verde"><span>Entradas</span><strong id="kpiEnt">R$ 0,00</strong></div>
+        <div class="kpi kpi-vermelho"><span>Saídas</span><strong id="kpiSai">R$ 0,00</strong></div>
+        <div class="kpi kpi-ouro"><span>Pedidos</span><strong id="kpiPed">0</strong></div>
+        <div class="kpi kpi-roxo"><span>Saldo</span><strong id="kpiSaldo">R$ 0,00</strong></div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="painel-secao" id="sec-catalogo">
+      <div class="secao-cab"><h2>Catálogo de produtos</h2><span class="total-pill" id="totalProdutos">0 produtos</span></div>
+      <form class="form-linha" id="formProduto">
+        <label>Nome <input type="text" id="prodNome" placeholder="ex: Colar Riviera" required></label>
+        <label>Categoria
+          <select id="prodCat" required>
+            <option value="">Selecione...</option>
+            <option>Colares</option><option>Brincos</option><option>Pulseiras</option>
+            <option>Anéis</option><option>Relógios</option><option>Conjuntos</option><option>Outros</option>
+          </select>
+        </label>
+        <label>Preço (R$) <input type="number" id="prodPreco" step="0.01" min="0" placeholder="0,00"></label>
+        <label>Descrição <input type="text" id="prodDesc" placeholder="breve descrição"></label>
+        <label>URL da imagem <input type="url" id="prodImg" placeholder="link da foto (ex: do Instagram)"></label>
+        <button type="submit" class="btn-add">+ Adicionar produto</button>
+      </form>
+      <p class="ajuda">Dica: para a imagem, suba a foto em algum serviço (ex: ImgBB, postimages.org) e cole o link direto aqui. O produto aparece imediatamente no catálogo público.</p>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Foto</th><th>Nome</th><th>Categoria</th><th>Preço</th><th>Ativo</th><th></th></tr></thead>
+        <tbody id="tbodyProdutos"></tbody></table>
+      </div>
+    </section>
+
+    <!-- PEDIDOS -->
+    <section class="painel-secao" id="sec-pedidos">
+      <div class="secao-cab"><h2>Pedidos</h2><span class="total-pill" id="totalPedidos">0</span></div>
+      <form class="form-linha" id="formPedido">
+        <label>Cliente <input type="text" id="pedCliente" placeholder="ex: Ana" required></label>
+        <label>WhatsApp <input type="tel" id="pedTel" placeholder="11 99999-9999"></label>
+        <label>Produto / Descrição <input type="text" id="pedProduto" placeholder="ex: Colar Riviera" required></label>
+        <label>Valor (R$) <input type="number" id="pedValor" step="0.01" min="0" placeholder="0,00" required></label>
+        <label>Status
+          <select id="pedStatus"><option>Pendente</option><option>Aprovado</option><option>Enviado</option><option>Entregue</option><option>Cancelado</option></select>
+        </label>
+        <button type="submit" class="btn-add">+ Registrar</button>
+      </form>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Cliente</th><th>Produto</th><th>Valor</th><th>Status</th><th>Data</th><th></th></tr></thead>
+        <tbody id="tbodyPedidos"></tbody></table>
+      </div>
+    </section>
+
+    <!-- ENTRADAS -->
+    <section class="painel-secao" id="sec-entradas">
+      <div class="secao-cab"><h2>Entradas</h2><span class="total-pill" id="totalEnt">Total: R$ 0,00</span></div>
+      <form class="form-linha" id="formEntrada">
+        <label>Descrição <input type="text" id="entDesc" placeholder="ex: venda colar" required></label>
+        <label>Forma <select id="entForma"><option>Pix</option><option>Dinheiro</option><option>Débito</option><option>Crédito</option></select></label>
+        <label>Valor (R$) <input type="number" id="entValor" step="0.01" min="0.01" required></label>
+        <label>Data <input type="date" id="entData" required></label>
+        <button type="submit" class="btn-add">+ Lançar</button>
+      </form>
+      <div class="filtro-mes"><label>Filtrar mês: <input type="month" id="mesEnt"></label></div>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Descrição</th><th>Valor</th><th>Data</th><th></th></tr></thead>
+        <tbody id="tbodyEnt"></tbody></table>
+      </div>
+    </section>
+
+    <!-- SAÍDAS -->
+    <section class="painel-secao" id="sec-saidas">
+      <div class="secao-cab"><h2>Saídas</h2><span class="total-pill vermelho" id="totalSai">Total: R$ 0,00</span></div>
+      <form class="form-linha" id="formSaida">
+        <label>Descrição <input type="text" id="saiDesc" placeholder="ex: fornecedor, frete..." required></label>
+        <label>Valor (R$) <input type="number" id="saiValor" step="0.01" min="0.01" required></label>
+        <label>Data <input type="date" id="saiData" required></label>
+        <button type="submit" class="btn-add">+ Lançar</button>
+      </form>
+      <div class="filtro-mes"><label>Filtrar mês: <input type="month" id="mesSai"></label></div>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Descrição</th><th>Valor</th><th>Data</th><th></th></tr></thead>
+        <tbody id="tbodySai"></tbody></table>
+      </div>
+    </section>
+
+    <!-- FECHAMENTOS -->
+    <section class="painel-secao" id="sec-fechamentos">
+      <div class="secao-cab"><h2>Fechamentos mensais</h2></div>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Mês</th><th>Entradas</th><th>Saídas</th><th>Saldo</th></tr></thead>
+        <tbody id="tbodyFech"></tbody></table>
+      </div>
+    </section>
+
+    <!-- BACKUP -->
+    <section class="painel-secao" id="sec-backup">
+      <div class="secao-cab"><h2>Backup</h2></div>
+      <p class="ajuda">Os dados ficam salvos neste navegador. Baixe o backup com frequência.</p>
+      <div class="backup-botoes">
+        <button class="btn-add" id="btnExportJSON">&#11015; Baixar backup (.json)</button>
+        <label class="btn-add secundario btn-importar">&#11014; Restaurar backup <input type="file" id="inputImport" accept=".json" hidden></label>
+        <button class="btn-perigo" id="btnLimpar">&#128465; Apagar tudo</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

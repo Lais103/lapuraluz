@@ -1,422 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Pura Luz Acessórios</title>
-  <meta
-    name="description"
-    content="Acessórios em aço inox com elegância, delicadeza e estilo para o seu dia a dia."
-  />
-  <meta property="og:title" content="La Pura Luz Acessórios" />
-  <meta
-    property="og:description"
-    content="Acessórios em aço inox com elegância, delicadeza e estilo para o seu dia a dia."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Pura Luz Acessórios</title>
+<meta name="description" content="Acessórios em aço inox com elegância, delicadeza e estilo para o seu dia a dia.">
+<meta property="og:title" content="La Pura Luz Acessórios">
+<meta property="og:description" content="Acessórios em aço inox com elegância, delicadeza e estilo para o seu dia a dia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-wrap">
-      <span>Acessórios em aço inox com visual elegante e feminino</span>
-      <a
-        href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Receber catálogo
-      </a>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container topbar-wrap">
+    <span>Acessórios em aço inox com visual elegante e feminino</span>
+    <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz." target="_blank" rel="noopener">Receber catálogo</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-wrap">
+    <a href="#inicio" class="brand">
+      <img src="logo.png" alt="La Pura Luz" class="brand-logo">
+      <span class="brand-name">La Pura Luz</span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#colecoes">Coleção</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="#contato">Contato</a>
+      <a href="admin.html" class="nav-admin">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <a href="catalogo.html" class="btn btn-outline">Ver Coleção</a>
+      <a href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz." class="btn btn-whatsapp" target="_blank" rel="noopener">&#128172; WhatsApp</a>
     </div>
   </div>
+</header>
 
-  <header class="site-header">
-    <div class="container header-wrap">
-      <a href="#inicio" class="brand">
-        <img src="logo.png" alt="La Pura Luz Acessórios" class="brand-logo" />
-        <span class="brand-name">La Pura Luz Acessórios</span>
-      </a>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-layout">
+    <aside class="hero-sidebar hero-left">
+      <a href="catalogo.html" class="sidebar-btn">&#128141; Ver Coleção</a>
+      <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener" class="sidebar-btn">&#128230; Fazer Pedido</a>
+      <a href="#sobre" class="sidebar-btn">&#10024; Nossa História</a>
+      <a href="#contato" class="sidebar-btn">&#128172; Contato</a>
+    </aside>
+    <div class="hero-center">
+      <img src="logo.png" alt="La Pura Luz Acessórios" class="hero-logo">
+      <div class="hero-divider"></div>
+      <p class="hero-frase"><em>Acessórios que brilham com você todos os dias.</em></p>
+    </div>
+    <aside class="hero-sidebar hero-right">
+      <p class="sidebar-titulo">NOSSAS CATEGORIAS</p>
+      <a href="catalogo.html#colares" class="cat-link">&#128141; Colares <span>›</span></a>
+      <a href="catalogo.html#brincos" class="cat-link">&#128142; Brincos <span>›</span></a>
+      <a href="catalogo.html#pulseiras" class="cat-link">&#128141; Pulseiras <span>›</span></a>
+      <a href="catalogo.html#aneis" class="cat-link">&#128141; Anéis <span>›</span></a>
+      <a href="catalogo.html#relogios" class="cat-link">&#9201; Relógios <span>›</span></a>
+      <a href="catalogo.html#conjuntos" class="cat-link">&#10024; Conjuntos <span>›</span></a>
+    </aside>
+  </div>
+</section>
 
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="main-nav">
-        <a href="#inicio">Início</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#colecoes">Coleções</a>
-        <a href="#marca">A marca</a>
-        <a href="#instagram">Instagram</a>
-        <a href="#contato">Contato</a>
-      </nav>
-
-      <div class="header-actions">
-        <a
-          href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz."
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver catálogo
-        </a>
+<!-- SOBRE / QUEM SOMOS -->
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-img">
+      <div class="sobre-img-placeholder">
+        <img src="logo.png" alt="La Pura Luz" class="sobre-logo-img">
       </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">La Pura Luz Acessórios</span>
-          <h1>Elegância leve para acompanhar o seu estilo.</h1>
-          <p>
-            Acessórios em aço inox com estética feminina, delicada e versátil para valorizar seu visual
-            com charme, leveza e sofisticação.
-          </p>
-
-          <div class="hero-buttons">
-            <a
-              href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz."
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver catálogo
-            </a>
-
-            <a
-              href="https://www.instagram.com/lapuraluz.acessorios/"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram oficial
-            </a>
-          </div>
-
-          <div class="hero-badges">
-            <span>Peças em aço inox</span>
-            <span>Curadoria feminina</span>
-            <span>Atendimento no WhatsApp</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <img src="logo.png" alt="Logo La Pura Luz Acessórios" class="hero-card-logo" />
-          </div>
-
-          <div class="hero-card-bottom">
-            <div class="hero-feature">
-              <strong>Visual elegante</strong>
-              <p>Peças leves e sofisticadas para diferentes momentos.</p>
-            </div>
-
-            <div class="hero-feature">
-              <strong>Curadoria delicada</strong>
-              <p>Modelos femininos pensados para valorizar o seu estilo.</p>
-            </div>
-
-            <div class="hero-feature">
-              <strong>Atendimento próximo</strong>
-              <p>Contato rápido pelo WhatsApp e novidades no Instagram.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="benefits-strip" id="beneficios">
-      <div class="container benefits-grid">
-        <div class="benefit-pill">Aço inox</div>
-        <div class="benefit-pill">Estilo delicado</div>
-        <div class="benefit-pill">Curadoria elegante</div>
-        <div class="benefit-pill">Contato direto</div>
-      </div>
-    </section>
-
-    <section class="collections-section" id="colecoes">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Coleções</span>
-          <h2>Descubra peças para diferentes momentos</h2>
-          <p>Uma seleção pensada para quem gosta de elegância sem excessos.</p>
-        </div>
-
-        <div class="collections-grid">
-          <article class="collection-card">
-            <div class="collection-visual visual-1"></div>
-            <h3>Brincos</h3>
-            <p>Modelos delicados para iluminar o visual com sofisticação.</p>
-            <a
-              href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20brincos%20da%20La%20Pura%20Luz."
-              class="text-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver peças
-            </a>
-          </article>
-
-          <article class="collection-card">
-            <div class="collection-visual visual-2"></div>
-            <h3>Colares</h3>
-            <p>Peças versáteis para compor produções leves e femininas.</p>
-            <a
-              href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20colares%20da%20La%20Pura%20Luz."
-              class="text-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver peças
-            </a>
-          </article>
-
-          <article class="collection-card">
-            <div class="collection-visual visual-3"></div>
-            <h3>Conjuntos</h3>
-            <p>Combinações pensadas para um visual harmonioso e marcante.</p>
-            <a
-              href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20conjuntos%20da%20La%20Pura%20Luz."
-              class="text-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver peças
-            </a>
-          </article>
-
-          <article class="collection-card">
-            <div class="collection-visual visual-4"></div>
-            <h3>Destaques</h3>
-            <p>Peças especiais para valorizar sua produção com personalidade.</p>
-            <a
-              href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20destaques%20da%20La%20Pura%20Luz."
-              class="text-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver peças
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="brand-section" id="marca">
-      <div class="container brand-grid">
-        <div class="brand-copy">
-          <span class="eyebrow">A marca</span>
-          <h2>Delicadeza, presença e sofisticação em cada detalhe.</h2>
-          <p>
-            A La Pura Luz reúne acessórios femininos em aço inox com uma curadoria elegante,
-            leve e atual. Peças pensadas para valorizar seu estilo com charme e personalidade.
-          </p>
-
-          <a
-            href="https://wa.me/5511963180253?text=Olá!%20Quero%20conhecer%20as%20coleções%20da%20La%20Pura%20Luz."
-            class="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Conhecer coleções
-          </a>
-        </div>
-
-        <div class="brand-panel">
-          <div class="brand-panel-box">
-            <img src="logo.png" alt="Logo La Pura Luz Acessórios" class="brand-panel-logo" />
-            <p>
-              Peças delicadas, visual sofisticado e uma seleção pensada para mulheres
-              que gostam de elegância com leveza.
-            </p>
-
-            <div class="brand-tags">
-              <span>Elegante</span>
-              <span>Feminina</span>
-              <span>Versátil</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="catalog-section" id="catalogo">
-      <div class="container catalog-box">
-        <span class="eyebrow">Catálogo</span>
-        <h2>Receba o catálogo da La Pura Luz</h2>
-        <p>
-          Fale pelo WhatsApp para conhecer os modelos disponíveis e ver as novidades da marca.
-        </p>
-
-        <a
-          href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz."
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Receber catálogo
-        </a>
-      </div>
-    </section>
-
-    <section class="instagram-section" id="instagram">
-      <div class="container instagram-grid">
-        <div class="instagram-copy">
-          <span class="eyebrow">Instagram</span>
-          <h2>Acompanhe a marca mais de perto</h2>
-          <p>
-            Veja novidades, lançamentos e inspirações no Instagram da La Pura Luz.
-          </p>
-
-          <a
-            href="https://www.instagram.com/lapuraluz.acessorios/"
-            class="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Seguir no Instagram
-          </a>
-        </div>
-
-        <div class="instagram-panel">
-          <div class="mini-card">Novidades</div>
-          <div class="mini-card">Lançamentos</div>
-          <div class="mini-card">Inspirações</div>
-          <div class="mini-card">Destaques</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta" id="contato">
-      <div class="container final-cta-box">
-        <span class="eyebrow">Contato</span>
-        <h2>Fale com a La Pura Luz</h2>
-        <p>Acesse o catálogo ou fale direto pelo WhatsApp.</p>
-
-        <div class="final-cta-buttons">
-          <a
-            href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz."
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver catálogo
-          </a>
-
-          <a
-            href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz%20Acessórios."
-            class="btn btn-whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Falar no WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="logo.png" alt="La Pura Luz Acessórios" class="footer-logo" />
-        <p>Elegância e delicadeza para iluminar o seu estilo.</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="#inicio">Início</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#colecoes">Coleções</a>
-        <a href="#marca">A marca</a>
-      </div>
-
-      <div class="footer-links">
-        <a
-          href="https://www.instagram.com/lapuraluz.acessorios/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
-        <a
-          href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz%20Acessórios."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp
-        </a>
-      </div>
+    <div class="sobre-texto">
+      <h2>Quem Somos</h2>
+      <p>Na La Pura Luz, acreditamos que cada detalhe carrega significado. Nossos acessórios são escolhidos com carinho para realçar sua beleza e iluminar seus melhores momentos.</p>
+      <p>Mais que acessórios, entregamos brilho, leveza e autenticidade para você!</p>
+      <a href="#colecoes" class="btn btn-outline">Conheça Nossa História</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <a
-    href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz%20Acessórios."
-    class="float-whats"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar no WhatsApp"
-  >
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M19.11 17.23c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.09-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.04-.35-.02-.48-.07-.14-.62-1.5-.85-2.06-.22-.53-.45-.46-.62-.47h-.53c-.18 0-.48.07-.73.35-.25.28-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z"
-      />
-      <path
-        fill="currentColor"
-        d="M16.03 3.2c-7 0-12.68 5.67-12.68 12.66 0 2.23.58 4.41 1.69 6.33L3.2 28.8l6.77-1.78a12.7 12.7 0 0 0 6.06 1.55h.01c6.99 0 12.67-5.68 12.67-12.66 0-3.39-1.32-6.58-3.72-8.97a12.58 12.58 0 0 0-8.96-3.74zm0 23.24h-.01a10.6 10.6 0 0 1-5.41-1.49l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.51 10.51 0 0 1-1.62-5.59c0-5.82 4.75-10.56 10.6-10.56 2.83 0 5.49 1.1 7.49 3.1a10.5 10.5 0 0 1 3.1 7.47c0 5.82-4.75 10.57-10.56 10.57z"
-      />
-    </svg>
-  </a>
+<!-- COLEÇÕES -->
+<section class="colecoes" id="colecoes">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Coleções</span>
+      <h2>Descubra peças para diferentes momentos</h2>
+      <p>Uma seleção pensada para quem gosta de elegância sem excessos.</p>
+    </div>
+    <div class="colecoes-grid">
+      <article class="col-card">
+        <div class="col-visual v1"></div>
+        <h3>Brincos</h3>
+        <p>Modelos delicados para iluminar o visual com sofisticação.</p>
+        <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20brincos." class="text-link" target="_blank" rel="noopener">Ver peças</a>
+      </article>
+      <article class="col-card">
+        <div class="col-visual v2"></div>
+        <h3>Colares</h3>
+        <p>Peças versáteis para compor produções leves e femininas.</p>
+        <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20colares." class="text-link" target="_blank" rel="noopener">Ver peças</a>
+      </article>
+      <article class="col-card">
+        <div class="col-visual v3"></div>
+        <h3>Conjuntos</h3>
+        <p>Combinações pensadas para um visual harmonioso e marcante.</p>
+        <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20conjuntos." class="text-link" target="_blank" rel="noopener">Ver peças</a>
+      </article>
+      <article class="col-card">
+        <div class="col-visual v4"></div>
+        <h3>Destaques</h3>
+        <p>Peças especiais para valorizar sua produção com personalidade.</p>
+        <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20ver%20os%20destaques." class="text-link" target="_blank" rel="noopener">Ver peças</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const mainNav = document.querySelector(".main-nav");
-      const navLinks = document.querySelectorAll(".main-nav a");
-      const header = document.querySelector(".site-header");
+<!-- CTA CATÁLOGO -->
+<section class="cta-catalogo">
+  <div class="container cta-box">
+    <span class="eyebrow">Catálogo</span>
+    <h2>Veja todas as peças disponíveis</h2>
+    <p>Navegue pelo catálogo completo ou fale pelo WhatsApp para pedir o seu.</p>
+    <div class="cta-botoes">
+      <a href="catalogo.html" class="btn btn-primary">Abrir catálogo</a>
+      <a href="https://wa.me/5511963180253?text=Olá!%20Quero%20receber%20o%20catálogo%20da%20La%20Pura%20Luz." class="btn btn-whatsapp" target="_blank" rel="noopener">Receber pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-      if (menuToggle && mainNav) {
-        menuToggle.addEventListener("click", () => {
-          const isOpen = mainNav.classList.toggle("active");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="container cta-box">
+    <span class="eyebrow">Contato</span>
+    <h2>Fale com a La Pura Luz</h2>
+    <p>Acesse o catálogo ou fale direto pelo WhatsApp.</p>
+    <div class="cta-botoes">
+      <a href="catalogo.html" class="btn btn-primary">Ver catálogo</a>
+      <a href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz%20Acessórios." class="btn btn-whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-        navLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mainNav.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-          });
-        });
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="logo.png" alt="La Pura Luz" class="footer-logo">
+      <p>Elegância e delicadeza para iluminar o seu estilo.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#colecoes">Coleções</a>
+      <a href="catalogo.html">Catálogo</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/lapuraluz.acessorios/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/5511963180253" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
 
-        document.addEventListener("click", (event) => {
-          const clickedInsideNav = mainNav.contains(event.target);
-          const clickedToggle = menuToggle.contains(event.target);
+<!-- WhatsApp flutuante -->
+<a class="float-whats" href="https://wa.me/5511963180253?text=Olá!%20Vim%20pelo%20site%20da%20La%20Pura%20Luz%20Acessórios." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.6L.8 31.2l7.8-2c2.2 1.2 4.7 1.9 7.4 1.9 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm0 27.7c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.6 1.2 1.2-4.5-.3-.5c-1.3-2-2-4.4-2-6.8C3.1 8.9 8.9 3.1 16 3.1S28.9 8.9 28.9 16 23.1 28.5 16 28.5zm7.1-9.4c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+</a>
 
-          if (!clickedInsideNav && !clickedToggle) {
-            mainNav.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", () => {
-        if (!header) return;
-        header.style.boxShadow =
-          window.scrollY > 10 ? "0 8px 24px rgba(61, 43, 20, 0.08)" : "none";
-      });
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
