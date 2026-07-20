@@ -12,5 +12,5 @@ Landing page institucional da La Pura Luz Acessórios.
 Apresentar a marca com visual elegante, fortalecer a confiança, levar visitantes para o catálogo via WhatsApp e captar seguidores no Instagram.
 
 ## Contatos
-- Instagram: https://www.instagram.com/lapuraluz.acessorios/
+- Instagram: https://www.instagram.com/lapuraluz.acessorios?utm_source=qr
 - WhatsApp: https://wa.me/5511963180253
