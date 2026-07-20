@@ -48,6 +48,8 @@
     <button class="aba" data-aba="pedidos">&#128230; Pedidos</button>
     <button class="aba" data-aba="entradas">&#128181; Entradas</button>
     <button class="aba" data-aba="saidas">&#128184; Saídas</button>
+    <button class="aba" data-aba="estoque">&#128230; Estoque</button>
+    <button class="aba" data-aba="despesas">&#128176; Despesas</button>
     <button class="aba" data-aba="fechamentos">&#128197; Fechamentos</button>
     <button class="aba" data-aba="backup">&#128190; Backup</button>
   </nav>
@@ -77,14 +79,18 @@
             <option>Anéis</option><option>Relógios</option><option>Conjuntos</option><option>Outros</option>
           </select>
         </label>
+        <label>SKU <input type="text" id="prodSku" placeholder="ex: BRI-001"></label>
+        <label>Custo (R$) <input type="number" id="prodCusto" step="0.01" min="0" placeholder="0,00"></label>
         <label>Preço (R$) <input type="number" id="prodPreco" step="0.01" min="0" placeholder="0,00"></label>
+        <label>Estoque <input type="number" id="prodEstoque" min="0" value="0"></label>
+        <label>Estoque mín. <input type="number" id="prodMin" min="0" value="3"></label>
         <label>Descrição <input type="text" id="prodDesc" placeholder="breve descrição"></label>
-        <label>URL da imagem <input type="url" id="prodImg" placeholder="link da foto (ex: do Instagram)"></label>
+        <label>Foto do produto <input type="file" id="prodImg" accept="image/*"></label>
         <button type="submit" class="btn-add">+ Adicionar produto</button>
       </form>
-      <p class="ajuda">Dica: para a imagem, suba a foto em algum serviço (ex: ImgBB, postimages.org) e cole o link direto aqui. O produto aparece imediatamente no catálogo público.</p>
+      <p class="ajuda">Escolha uma foto do celular ou computador — ela é salva direto no navegador junto com o produto. ✨</p>
       <div class="tabela-wrap">
-        <table><thead><tr><th>Foto</th><th>Nome</th><th>Categoria</th><th>Preço</th><th>Ativo</th><th></th></tr></thead>
+        <table><thead><tr><th>Foto</th><th>SKU</th><th>Nome</th><th>Categoria</th><th>Custo</th><th>Preço</th><th>Estoque</th><th>Ativo</th><th></th></tr></thead>
         <tbody id="tbodyProdutos"></tbody></table>
       </div>
     </section>
@@ -97,9 +103,8 @@
         <label>WhatsApp <input type="tel" id="pedTel" placeholder="11 99999-9999"></label>
         <label>Produto / Descrição <input type="text" id="pedProduto" placeholder="ex: Colar Riviera" required></label>
         <label>Valor (R$) <input type="number" id="pedValor" step="0.01" min="0" placeholder="0,00" required></label>
-        <label>Status
-          <select id="pedStatus"><option>Pendente</option><option>Aprovado</option><option>Enviado</option><option>Entregue</option><option>Cancelado</option></select>
-        </label>
+        <label>Canal <select id="pedCanal"><option>Instagram</option><option>WhatsApp</option><option>Shopee</option><option>TikTok Shop</option><option>Presencial</option></select></label>
+        <label>Status <select id="pedStatus"><option>Pendente</option><option>Aprovado</option><option>Enviado</option><option>Entregue</option><option>Cancelado</option></select></label>
         <button type="submit" class="btn-add">+ Registrar</button>
       </form>
       <div class="tabela-wrap">
@@ -138,6 +143,42 @@
       <div class="tabela-wrap">
         <table><thead><tr><th>Descrição</th><th>Valor</th><th>Data</th><th></th></tr></thead>
         <tbody id="tbodySai"></tbody></table>
+      </div>
+    </section>
+
+    <!-- ESTOQUE -->
+    <section class="painel-secao" id="sec-estoque">
+      <div class="secao-cab"><h2>Controle de estoque</h2><span class="total-pill" id="totalEstoque">0 produtos</span></div>
+      <p class="ajuda">O estoque é atualizado automaticamente a partir dos produtos do catálogo. Altere a quantidade aqui.</p>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>SKU</th><th>Produto</th><th>Categoria</th><th>Custo</th><th>Preço</th><th>Estoque</th><th>Mín.</th><th>Status</th></tr></thead>
+        <tbody id="tbodyEstoque"></tbody></table>
+      </div>
+    </section>
+
+    <!-- DESPESAS -->
+    <section class="painel-secao" id="sec-despesas">
+      <div class="secao-cab"><h2>Custos e despesas</h2><span class="total-pill vermelho" id="totalDesp">R$ 0,00</span></div>
+      <form class="form-linha" id="formDespesa">
+        <label>Tipo <select id="despTipo"><option>Fixa</option><option>Variável</option></select></label>
+        <label>Categoria
+          <select id="despCat">
+            <option>Estoque</option><option>Embalagem</option><option>Imposto</option>
+            <option>Telefonia</option><option>Marketing</option><option>Transporte</option>
+            <option>Impressão</option><option>Contabilidade</option><option>Outros</option>
+          </select>
+        </label>
+        <label>Descrição <input type="text" id="despDesc" placeholder="ex: reposição brincos" required></label>
+        <label>Valor (R$) <input type="number" id="despValor" step="0.01" min="0.01" required></label>
+        <label>Pago? <select id="despPago"><option>Sim</option><option>Não</option></select></label>
+        <label>Forma <select id="despForma"><option>PIX</option><option>Dinheiro</option><option>Débito</option><option>Crédito</option></select></label>
+        <label>Data <input type="date" id="despData" required></label>
+        <button type="submit" class="btn-add">+ Lançar</button>
+      </form>
+      <div class="filtro-mes"><label>Filtrar mês: <input type="month" id="mesDesp"></label></div>
+      <div class="tabela-wrap">
+        <table><thead><tr><th>Tipo</th><th>Categoria</th><th>Descrição</th><th>Valor</th><th>Pago</th><th>Data</th><th></th></tr></thead>
+        <tbody id="tbodyDesp"></tbody></table>
       </div>
     </section>
 
