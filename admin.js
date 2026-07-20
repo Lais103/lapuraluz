@@ -2,7 +2,7 @@
 // LA PURA LUZ — Painel Administrativo
 // ============================================================
 
-const ADMIN_EMAIL = 'lais103@gmail.com';
+const ADMIN_EMAIL = 'lapuraluz.acessorios@gmail.com';
 const ADMIN_SENHA = '123456';
 const CHAVE_SESSAO = 'lpl_logado';
 const CHAVE_DADOS = 'lpl_dados';
